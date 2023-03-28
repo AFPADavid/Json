@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo Live JSON</title>
+</head>
+<body>
+    <script text="javascript">
+
+        let compagnies = `[
+            {
+                "entrepriseName" : "Other Big Coporation",
+                "numberOfEmployees" : 10000,
+                "CEO" : "Mark",
+                "rating" : 3.2
+            },
+            {
+                "entrepriseName" : "Small Startup",
+                "numberOfEmployees" : 3,
+                "CEO" : null,
+                "rating" : 4.8
+            }
+        ]`;
+
+
+        console.log(compagnies); // Si on ne met pas les `` c'est un objet, sinon une chaine de caractère
+        console.log( JSON.parse(compagnies)  ); // Traduction du format texte au format JSON
+        let compagniesParser = JSON.parse(compagnies);
+
+        console.log(compagniesParser[0].entrepriseName); // Afficher le entrepriseName de la ligne 0
+
+        compagniesParser[1].rating = 2; // modifier la note de la Startup (ligne 2 du JSON)
+
+    </script>
+
+
+
+
+
+    
+</body>
+</html>

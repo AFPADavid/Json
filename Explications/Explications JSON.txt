@@ -1,0 +1,14 @@
+JSon veux dire JavaScript Object Notation
+Si l'on traduit il s'agit d'une manière d'écrire des objet pour le Javascript
+
+C'est un format de présentation de donné au même titre que le XML
+Celui-ci est très utilisé pour les API ou les config de programmes (y compris les jeux ou VS code)
+C'est un format facile à lire et très léger a créer
+La plupart des langages sont capable de lire du JSON
+
+Un JSON est capable de contenir :
+- Des chaines de caractères (string)
+- Des nombres (numbers)
+- Des booleans
+- Des Arrays
+- Des objets

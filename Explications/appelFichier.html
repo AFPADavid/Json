@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appel JSON</title>
+</head>
+<body>
+    <script text="javascript">
+        /* 1/ pour commencer, nous allons charger l'URL du fichier JSON que nous voulons récupérer dans une variable./
+        Aussi, ajouter la ligne suivante à votre code Javascript :*/
+        let requestURL = 'exempleJSON.json';
+
+        /* 2/ Afin de créer une requête, nous avons besoin d'instancier un nouvel objet XMLHttpRequest à partir
+        de son constructeur en utilisant le mot clé new. Ajouter la ligne suivante à votre script :*/
+        let request = new XMLHttpRequest();
+
+        /* 3/Maintenant, nous avons besoin d'ouvrir une nouvelle requête grâce à la méthode open().
+        Ajoutez la ligne suivante :    */
+        request.open('GET', requestURL);
+        /*
+        Cette méthode prend au moins deux paramètres — il y a d'autres paramètres optionnels disponibles.
+            Deux suffiront pour notre exemple :
+                - La méthode HTTP à utiliser sur le réseau pour notre requête. 
+                Dans notre cas, la méthode GET est appropriée dans la mesure où nous voulons simplement récupérer quelques données.
+                - L'URL où adresser notre requête — il s'agit de l'URL du fichier JSON dont nous parlions tout à l'heure.
+        */
+
+        /* 4 Ensuite, ajoutez les deux lignes suivantes — ici, nous attribuons la valeur 'json' à responseType (en-US),
+        signalant ainsi au serveur que nous attendons une réponse au format JSON. Puis, nous envoyons notre requête à l'aide de la méthode send() : */
+
+        request.responseType = 'json';
+        request.send();
+
+        /* 5/ La dernière partie de cette section concerne la réponse du serveur et son traitement.
+        Ajoutez les lignes suivantes à la fin de votre code :*/
+
+        request.onload = function() {
+        let compagnies = request.response;
+        console.log(compagnies);
+        }
+
+    </script>    
+
+
+
+</body>
+</html>

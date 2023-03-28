@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<p><code>$.getJSON(url, data, success);</code></p>
+<p>Les trois paramètres correspondent donc à :
+<ul>
+    <li>le paramètre url, qui est une chaîne contenant l’URL à laquelle la demande est envoyée</li>
+    <li>le paramètre de données facultatif, qui est un objet ou une chaîne envoyée au serveur avec la demande</li>
+    <li>le paramètre facultatif success(data, textStatus, jqXHR), qui est une fonction de rappel exécutée uniquement si la demande réussit</li>
+</ul>
+</p>
+<p>Dans le scénario le plus simple, nous ne nous soucions que de l’objet retourné. Dans ce cas, un rappel de réussite potentiel ressemblerait à ceci :</p>
+<code>function success(data) {<br>
+    // do something with data, which is an object<br>
+  }</code>
+<p>Comme mentionné, la même demande peut être déclenchée avec l’appel plus verbeux <code>$.ajax()</code>. Ici, nous utiliserions:</p>
+<code>$.ajax({<br>
+    dataType: 'json',<br>
+    url: url,<br>
+    data: data,<br>
+    success: success<br>
+  });</code>
+  <p>Voyons cela en pratique en faisant une petite démo.</p>
+
+
+  <script>
+    let url ="exempleJSON.json";
+    $.getJSON(
+        url,
+        (data) =>{
+            console.log(data)
+        });
+  </script>
+
+
+  </body>
+</html>
